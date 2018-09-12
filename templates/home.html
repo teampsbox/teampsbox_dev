@@ -1,7 +1,9 @@
-<h1> Welcome to TeamPSBOX </h1>
+{% extends 'base.html' %}
 
-<ul>
-	{% for quote in quotes %}
-		<li>{{quote}}</li>
-	{% endfor %}
-</ul>
+{% block content %}
+
+{% for quote in quotes %}
+{% include '_quote.html' %}
+{% endfor %}
+
+{% endblock %}

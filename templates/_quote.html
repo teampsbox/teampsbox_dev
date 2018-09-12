@@ -1,0 +1,25 @@
+<div class="column is-8 is-offset-2">
+    <div class="card">
+        <div class="card-content">
+
+            <div class="content">
+                <p class="has-text-centered is-italic is-size-5">
+                    <q>{{ quote.content }}</q>
+                </p>
+
+                <p class="has-text-centered has-text-weight-semibold">
+                    {% if quote.by %}
+                    - {{ quote.by }}
+                    {% else %}
+                    - Anonymous
+                    {% endif %}
+                </p>
+
+                <p class="subtitle is-7 has-text-weight-light has-text-right">
+                    {{ quote.timestamp }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
