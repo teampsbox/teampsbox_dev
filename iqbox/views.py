@@ -6,6 +6,6 @@ from .models import Quote
 
 class IqboxPageView(ListView):
 	model = Quote
-	template_name = 'iqbox.html'
+	template_name = 'iqbox/iqbox.html'
 	context_object_name = 'quotes'
 

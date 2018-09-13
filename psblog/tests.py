@@ -14,7 +14,7 @@ class HomePageViewTest(SimpleTestCase):
 		response = self.client.get(reverse('home'))
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, '<h1>Homepage</h1>')
-		self.assertTemplateUsed(response, 'home.html')
+		self.assertTemplateUsed(response, 'psblog/home.html')
     
 
 class AboutPageViewTest(SimpleTestCase):
@@ -30,4 +30,4 @@ class AboutPageViewTest(SimpleTestCase):
 		response = self.client.get(reverse('about'))
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, '<h1> About Page </h1>')
-		self.assertTemplateUsed(response, 'about.html')
+		self.assertTemplateUsed(response, 'psblog/about.html')
