@@ -16,10 +16,7 @@ class QuoteModelTest(TestCase):
 		self.assertEqual(expected_object_name, 'just a test')
 
 
-class HomePageViewTest(TestCase):
-
-    def setUp(self):
-        Quote.objects.create(content='this is another test')
+class HomePageViewTest(TestCase):    
 
     def test_view_url_exists_at_proper_location(self):
         resp = self.client.get('/')
