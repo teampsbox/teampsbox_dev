@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('iqbox.urls')),
+    path('', include('psblog.urls')),
+    path('iqbox/', include('iqbox.urls')),
 
 ]

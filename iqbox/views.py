@@ -4,11 +4,8 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from .models import Quote
 
-class HomePageView(ListView):
+class IqboxPageView(ListView):
 	model = Quote
-	template_name = 'home.html'
+	template_name = 'iqbox.html'
 	context_object_name = 'quotes'
 
-
-class AboutPageView(TemplateView):
-	template_name = 'about.html'

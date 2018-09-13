@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # PSblog App
+    'psblog.apps.PsblogConfig',
+
     # IQbox App
     'iqbox.apps.IqboxConfig',
 ]
