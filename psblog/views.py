@@ -1,3 +1,4 @@
+from django.shortcuts import render
 
 # Class-based Views
 from django.views.generic import TemplateView
