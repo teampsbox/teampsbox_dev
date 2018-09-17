@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [    
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     # IQbox App
     'iqbox.apps.IqboxConfig',
 
-    # Users App
-    'users.apps.UsersConfig',
+    # Accounts App
+    'accounts.apps.AccountsConfig',
 
     # Django-Crispy-Forms
     'crispy_forms',
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'teampsbox.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,7 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
