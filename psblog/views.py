@@ -9,17 +9,17 @@ from django.urls import reverse_lazy
 from .models import Post
 
 
-class BlogListView(ListView):
+class PostListView(ListView):
 	model = Post	
 	template_name = 'psblog/home.html'
 	context_object_name = 'posts'
 	ordering = ['-date_posted']	
 
-class BlogDetailView(DetailView):
+class PostDetailView(DetailView):
 	model = Post
 	template_name = 'psblog/post_detail.html'
 
-class BlogCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
 	model = Post
 	template_name = 'psblog/post_new.html'
 	fields = ['title', 'body']
@@ -28,7 +28,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 		form.instance.author = self.request.user
 		return super().form_valid(form)
 
-class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Post
 	fields = ['title', 'body']
 	template_name = 'psblog/post_edit.html'
@@ -43,7 +43,7 @@ class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 			return True
 		return False
 
-class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Post
 	template_name = 'psblog/post_delete.html'
 	success_url = reverse_lazy('home')
