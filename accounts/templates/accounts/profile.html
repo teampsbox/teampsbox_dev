@@ -2,6 +2,22 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1>{{ user.username }}</h1>
+<div class="content-section">
+    <div class="media">
+        <img src="#" alt="" class="rounded-circle account-img">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+    </div>
+</div>
+
+{% for post in user_posts %}
+
+<h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+
+<p>{{ post.body }}</p>
+
+{% endfor %}
 
 {% endblock %}

@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 from .models import Post
 
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
 	model = Post	
 	template_name = 'psblog/home.html'
 	context_object_name = 'posts'
