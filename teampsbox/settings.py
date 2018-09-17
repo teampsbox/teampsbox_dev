@@ -31,6 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    # PSblog App
+    'psblog.apps.PsblogConfig',
+
+    # Accounts App
+    'accounts.apps.AccountsConfig',
+
+    # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,17 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # PSblog App
-    'psblog.apps.PsblogConfig',
-
-    # IQbox App
-    'iqbox.apps.IqboxConfig',
-
-    # Accounts App
-    'accounts.apps.AccountsConfig',
-
+    """ 3rd Party Apps """
     # Django-Crispy-Forms
     'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# From Django-Crispy-Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home'
