@@ -1,12 +1,13 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+
+# Function-Based Views
+from . import views
+
+from .views import HomePageView, AboutPageView
 
 
 urlpatterns = [
-
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),
-    path('psblog/', include('psblog.urls')),
-    path('accounts/', include('accounts.urls')),
-
+    path('', HomePageView.as_view(), name='home'),
+    path('about/', AboutPageView.as_view(), name='about'),
+    path('<user.username>/', views.profile, name='profile'),
 ]
