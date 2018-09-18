@@ -10,7 +10,7 @@ from .views import (
 )
 
 urlpatterns = [
-	path('all/', PostListView.as_view(), name='post_all'),
+	path('posts/', PostListView.as_view(), name='post_all'),
 	path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),
 	path('new/', PostCreateView.as_view(), name='post_new'),
 	path('<int:pk>/edit/', PostUpdateView.as_view(), name='post_edit'),
