@@ -11,7 +11,7 @@ from .models import Post
 
 class PostListView(LoginRequiredMixin, ListView):
 	model = Post	
-	template_name = 'psblog/home.html'
+	template_name = 'psblog/post_all.html'
 	context_object_name = 'posts'
 	ordering = ['-date_posted']	
 
@@ -54,7 +54,5 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 			return True
 		return False
 
-class AboutPageView(TemplateView):
-	template_name = 'psblog/about.html'
 
 

@@ -32,6 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
+    # Main App
+    'main.apps.MainConfig',
+
     # PSblog App
     'psblog.apps.PsblogConfig',
 
