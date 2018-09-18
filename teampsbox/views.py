@@ -16,7 +16,6 @@ class AboutPageView(TemplateView):
 
 
 @login_required
-def profile(request):
-    user = request.user
+def profile(request, username):
     user_posts = Post.objects.filter(author=request.user).order_by('-date_posted')
-    return render(request, 'teampsbox/profile.html', {'user_posts': user_posts, 'user': user})
+    return render(request, 'teampsbox/profile.html', {'user_posts': user_posts})
